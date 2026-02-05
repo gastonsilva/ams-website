@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "pnpx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
+  },
+  "general": {
+    "enablePromptCompletion": true
+  },
+  "experimental": {
+    "plan": true
+  }
+}
