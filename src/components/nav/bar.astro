@@ -14,7 +14,7 @@ export interface Props {
 const { items } = Astro.props;
 ---
 
-<nav id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent py-2">
+<nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent py-2">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
       <!-- Logo -->
@@ -151,6 +151,13 @@ const { items } = Astro.props;
     }
   };
 
+  // Set initial state immediately
+  handleScroll();
+
+  // Enable transitions after a frame to avoid initial animation
+  requestAnimationFrame(() => {
+    if (nav) nav.classList.add("transition-all", "duration-300");
+  });
+
   window.addEventListener("scroll", handleScroll);
-  handleScroll(); // Initial check
 </script>
