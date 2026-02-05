@@ -1,0 +1,73 @@
+<div id="global-loading-indicator" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-500 pointer-events-none opacity-100">
+  <div class="flex flex-col items-center">
+    <div class="w-12 h-12 border-4 border-ams-gray border-t-ams-highlight rounded-full animate-spin"></div>
+    <p class="mt-4 text-ams-dark font-medium tracking-widest text-xs uppercase">AMS Loading</p>
+  </div>
+</div>
+
+<div id="page-progress-bar" class="fixed top-0 left-0 h-1 bg-ams-highlight z-[10000] transition-all duration-300 ease-out w-0 opacity-0"></div>
+
+<script>
+  let startTime = performance.now();
+  let isFirstLoad = true;
+
+  function showLoading() {
+    const indicator = document.getElementById('global-loading-indicator');
+    const progressBar = document.getElementById('page-progress-bar');
+    if (indicator) {
+        indicator.classList.remove('opacity-0');
+        indicator.classList.add('opacity-100');
+    }
+    if (progressBar) {
+        progressBar.style.width = '30%';
+        progressBar.classList.remove('opacity-0');
+    }
+    startTime = performance.now();
+  }
+
+  function hideLoading() {
+    const indicator = document.getElementById('global-loading-indicator');
+    const progressBar = document.getElementById('page-progress-bar');
+    
+    if (progressBar) {
+        progressBar.style.width = '100%';
+        setTimeout(() => {
+            progressBar.classList.add('opacity-0');
+            setTimeout(() => { progressBar.style.width = '0%'; }, 300);
+        }, 200);
+    }
+
+    if (indicator) {
+        // Wait for images to load
+        const images = document.querySelectorAll('img');
+        const promises = Array.from(images).map(img => {
+            if (img.complete) return Promise.resolve();
+            return new Promise(resolve => {
+                img.onload = resolve;
+                img.onerror = resolve;
+            });
+        });
+
+        Promise.all(promises).then(() => {
+            indicator.classList.remove('opacity-100');
+            indicator.classList.add('opacity-0');
+            
+            const endTime = performance.now();
+            const duration = (endTime - startTime).toFixed(2);
+            const type = isFirstLoad ? 'Initial Load' : 'Navigation';
+            console.log(`[AMS] ${type} completed in ${duration}ms`);
+            isFirstLoad = false;
+        });
+    }
+  }
+
+  // Astro View Transitions handles the firing of events
+  // 'astro:page-load' fires on initial load and after every swap
+  document.addEventListener('astro:page-load', () => {
+    hideLoading();
+  });
+
+  document.addEventListener('astro:before-preparation', () => {
+    showLoading();
+  });
+</script>

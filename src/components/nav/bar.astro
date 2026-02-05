@@ -126,38 +126,52 @@ const { items } = Astro.props;
 </nav>
 
 <script>
-  const btn = document.getElementById("mobile-menu-button");
-  const menu = document.getElementById("mobile-menu");
-  const nav = document.getElementById("main-nav");
+  function initNav() {
+    const btn = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
+    const nav = document.getElementById("main-nav");
 
-  if (btn && menu) {
-    btn.addEventListener("click", () => {
-      const isExpanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!isExpanded));
-      menu.classList.toggle("hidden");
+    if (btn && menu) {
+      btn.addEventListener("click", () => {
+        const isExpanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!isExpanded));
+        menu.classList.toggle("hidden");
+      });
+    }
+
+    // Scroll effect
+    const handleScroll = () => {
+      if (nav) {
+        if (window.scrollY > 50) {
+          nav.classList.add("bg-ams-dark", "shadow-lg", "py-0");
+          nav.classList.remove("bg-transparent", "py-2");
+        } else {
+          nav.classList.add("bg-transparent", "py-2");
+          nav.classList.remove("bg-ams-dark", "shadow-lg", "py-0");
+        }
+      }
+    };
+
+    // Set initial state immediately
+    handleScroll();
+
+    // Enable transitions after a frame to avoid initial animation
+    requestAnimationFrame(() => {
+      if (nav) nav.classList.add("transition-all", "duration-300");
+    });
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Close menu on link clicks
+    const links = menu?.querySelectorAll('a');
+    links?.forEach(link => {
+      link.addEventListener('click', () => {
+        menu?.classList.add('hidden');
+        btn?.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 
-  // Scroll effect
-  const handleScroll = () => {
-    if (nav) {
-      if (window.scrollY > 50) {
-        nav.classList.add("bg-ams-dark", "shadow-lg", "py-0");
-        nav.classList.remove("bg-transparent", "py-2");
-      } else {
-        nav.classList.add("bg-transparent", "py-2");
-        nav.classList.remove("bg-ams-dark", "shadow-lg", "py-0");
-      }
-    }
-  };
-
-  // Set initial state immediately
-  handleScroll();
-
-  // Enable transitions after a frame to avoid initial animation
-  requestAnimationFrame(() => {
-    if (nav) nav.classList.add("transition-all", "duration-300");
-  });
-
-  window.addEventListener("scroll", handleScroll);
+  // On page navigation (including initial load)
+  document.addEventListener('astro:page-load', initNav);
 </script>
