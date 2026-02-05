@@ -1,11 +1,18 @@
 ---
 import MainLayout from "#layouts/main.astro";
+import { Image } from "astro:assets";
+import servicesHeaderImg from "#assets/images/services-header.png";
 ---
 
 <MainLayout>
   <!-- Page Header -->
-  <section class="bg-ams-dark py-12">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+  <section class="relative bg-ams-dark py-20 lg:py-32 overflow-hidden">
+     <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <Image src={servicesHeaderImg} alt="Services Header" class="w-full h-full object-cover opacity-30" />
+        <div class="absolute inset-0 bg-gradient-to-b from-ams-dark/80 via-ams-dark/60 to-ams-dark/90"></div>
+    </div>
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
         Nuestros Servicios
       </h1>
@@ -15,11 +22,11 @@ import MainLayout from "#layouts/main.astro";
     </div>
   </section>
 
-  <!-- 1. Aircraft Management Definition -->
+  <!-- Aircraft Management Definition -->
   <section class="py-16 bg-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="bg-ams-gray/10 rounded-2xl p-8 md:p-12 shadow-sm border border-ams-gray/20">
-              <h2 class="text-3xl font-bold text-ams-dark mb-6">1. ¿QUÉ ES AIRCRAFT MANAGEMENT?</h2>
+              <h2 class="text-3xl font-bold text-ams-dark mb-6">¿QUÉ ES AIRCRAFT MANAGEMENT?</h2>
               <div class="flex flex-col md:flex-row gap-12">
                   <div class="flex-1">
                       <p class="text-lg text-ams-dark/80 mb-6 leading-relaxed">
@@ -42,11 +49,11 @@ import MainLayout from "#layouts/main.astro";
       </div>
   </section>
 
-  <!-- 2. Diagnostic Report (Entry Program) -->
+  <!-- Diagnostic Report (Entry Program) -->
   <section class="py-16 bg-ams-dark text-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
            <div class="mb-12">
-               <h2 class="text-3xl font-bold text-white mb-2">2. PROGRAMA DE ENTRADA</h2>
+               <h2 class="text-3xl font-bold text-white mb-2">PROGRAMA DE ENTRADA</h2>
                <h3 class="text-2xl font-light text-ams-highlight tracking-wide">— DIAGNOSTIC REPORT™ (Sin costo)</h3>
            </div>
            
@@ -57,7 +64,7 @@ import MainLayout from "#layouts/main.astro";
            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                <!-- Col 1 -->
                <div class="bg-white/5 p-6 rounded-lg border border-white/10">
-                   <h4 class="text-lg font-bold text-ams-highlight mb-4">I. Análisis de Necesidades.</h4>
+                   <h4 class="text-lg font-bold text-ams-highlight mb-4">Análisis de Necesidades.</h4>
                    <ul class="space-y-2 text-sm text-ams-gray list-disc pl-4">
                        <li>Alcance y tipo de misión</li>
                        <li>Frecuencia de uso</li>
@@ -69,7 +76,7 @@ import MainLayout from "#layouts/main.astro";
 
                <!-- Col 2 -->
                <div class="bg-white/5 p-6 rounded-lg border border-white/10">
-                   <h4 class="text-lg font-bold text-ams-highlight mb-4">II. Comparativa Técnica.</h4>
+                   <h4 class="text-lg font-bold text-ams-highlight mb-4">Comparativa Técnica.</h4>
                    <p class="text-xs text-gray-400 mb-2">Evaluación objetiva: Monomotores, Bimotores, Turbohélices, Jets livianos.</p>
                    <ul class="space-y-2 text-sm text-ams-gray">
                        <li class="flex items-center"><span class="text-ams-highlight mr-2">✓</span> Performance</li>
@@ -82,7 +89,7 @@ import MainLayout from "#layouts/main.astro";
 
                <!-- Col 3 -->
                <div class="bg-white/5 p-6 rounded-lg border border-white/10">
-                   <h4 class="text-lg font-bold text-ams-highlight mb-4">III. Proyección Económica.</h4>
+                   <h4 class="text-lg font-bold text-ams-highlight mb-4">Proyección Económica.</h4>
                    <ul class="space-y-2 text-sm text-ams-gray list-disc pl-4">
                        <li>Costos fijos y variables</li>
                        <li>Mantenimiento programado</li>
@@ -95,11 +102,11 @@ import MainLayout from "#layouts/main.astro";
       </div>
   </section>
 
-  <!-- 3. Premium Program -->
+  <!-- Premium Program -->
   <section class="py-16 bg-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
            <div class="mb-12">
-               <h2 class="text-3xl font-bold text-ams-dark mb-2">3. PROGRAMA PREMIUM</h2>
+               <h2 class="text-3xl font-bold text-ams-dark mb-2">PROGRAMA PREMIUM</h2>
                <h3 class="text-2xl font-light text-ams-highlight tracking-wide">— AIRCRAFT MANAGEMENT PROGRAM™</h3>
                <p class="mt-4 text-ams-dark/80 max-w-3xl">
                    Un servicio integral que cubre todo lo necesario para operar una aeronave con <strong>seguridad, eficiencia y control de costos.</strong>
@@ -108,7 +115,7 @@ import MainLayout from "#layouts/main.astro";
 
            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                <div class="p-6 border-l-2 border-ams-highlight bg-ams-gray/5">
-                   <h4 class="font-bold text-ams-dark mb-3">A. Gestión Operativa.</h4>
+                   <h4 class="font-bold text-ams-dark mb-3">Gestión Operativa.</h4>
                    <ul class="space-y-1 text-sm text-ams-dark/70">
                        <li>✓ Programación de vuelos</li>
                        <li>✓ Coordinación de tripulaciones</li>
@@ -119,7 +126,7 @@ import MainLayout from "#layouts/main.astro";
                </div>
 
                <div class="p-6 border-l-2 border-ams-highlight bg-ams-gray/5">
-                   <h4 class="font-bold text-ams-dark mb-3">B. Gestión Técnica.</h4>
+                   <h4 class="font-bold text-ams-dark mb-3">Gestión Técnica.</h4>
                    <ul class="space-y-1 text-sm text-ams-dark/70">
                        <li>✓ Supervisión de mantenimiento</li>
                        <li>✓ Auditorías internas</li>
@@ -131,7 +138,7 @@ import MainLayout from "#layouts/main.astro";
                </div>
 
                <div class="p-6 border-l-2 border-ams-highlight bg-ams-gray/5">
-                   <h4 class="font-bold text-ams-dark mb-3">C. Gestión Regulatoria.</h4>
+                   <h4 class="font-bold text-ams-dark mb-3">Gestión Regulatoria.</h4>
                    <ul class="space-y-1 text-sm text-ams-dark/70">
                        <li>✓ Representación ANAC / EANA</li>
                        <li>✓ RNA y trámites</li>
@@ -141,7 +148,7 @@ import MainLayout from "#layouts/main.astro";
                </div>
 
                 <div class="p-6 border-l-2 border-ams-highlight bg-ams-gray/5">
-                   <h4 class="font-bold text-ams-dark mb-3">D. Gestión Económica.</h4>
+                   <h4 class="font-bold text-ams-dark mb-3">Gestión Económica.</h4>
                    <ul class="space-y-1 text-sm text-ams-dark/70">
                        <li>✓ Presupuesto anual</li>
                        <li>✓ Control de gastos</li>
@@ -152,7 +159,7 @@ import MainLayout from "#layouts/main.astro";
                </div>
 
                 <div class="p-6 border-l-2 border-ams-highlight bg-ams-gray/5">
-                   <h4 class="font-bold text-ams-dark mb-3">E. Pilotaje (Opcional).</h4>
+                   <h4 class="font-bold text-ams-dark mb-3">Pilotaje (Opcional).</h4>
                    <ul class="space-y-1 text-sm text-ams-dark/70">
                        <li>✓ Pilotaje profesional</li>
                        <li>✓ Entrenamientos y checkouts</li>
@@ -164,10 +171,10 @@ import MainLayout from "#layouts/main.astro";
       </div>
   </section>
 
-  <!-- 4. Benefits -->
+  <!-- Benefits -->
   <section class="py-16 bg-ams-gray/20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-           <h2 class="text-3xl font-bold text-ams-dark mb-12 text-center">4. BENEFICIOS PARA EL PROPIETARIO</h2>
+           <h2 class="text-3xl font-bold text-ams-dark mb-12 text-center">BENEFICIOS PARA EL PROPIETARIO</h2>
            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto">
                <div class="flex items-center space-x-3">
                    <div class="flex-shrink-0 h-10 w-10 rounded-full bg-ams-highlight text-white flex items-center justify-center font-bold">✓</div>
@@ -205,7 +212,11 @@ import MainLayout from "#layouts/main.astro";
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
               <!-- Service Card -->
               <div class="bg-ams-light p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center">
-                   <div class="w-16 h-16 bg-ams-gray/20 rounded-full flex items-center justify-center text-3xl mb-4">🤝</div>
+                   <div class="w-16 h-16 bg-ams-gray/20 rounded-full flex items-center justify-center text-3xl mb-4 text-ams-highlight">
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                   </div>
                    <h3 class="font-bold text-ams-dark text-xl mb-4">SERVICIO</h3>
                    <ul class="space-y-2 text-sm text-ams-dark/70">
                        <li>✓ Sin compromiso</li>
@@ -217,7 +228,11 @@ import MainLayout from "#layouts/main.astro";
               <!-- Price Card -->
               <div class="bg-ams-dark text-white p-8 rounded-xl shadow-xl transform scale-105 flex flex-col items-center text-center relative overflow-hidden">
                    <div class="absolute top-0 right-0 w-20 h-20 bg-ams-highlight/20 rounded-bl-full"></div>
-                   <div class="w-16 h-16 bg-ams-highlight rounded-full flex items-center justify-center text-3xl mb-4 text-ams-dark">💵</div>
+                   <div class="w-16 h-16 bg-ams-highlight rounded-full flex items-center justify-center text-3xl mb-4 text-ams-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                        </svg>
+                   </div>
                    <h3 class="font-bold text-white text-xl mb-6">PRECIO (Estimado)</h3>
                    <ul class="space-y-4 text-sm w-full">
                        <li class="flex justify-between border-b border-white/10 pb-2">
@@ -241,7 +256,11 @@ import MainLayout from "#layouts/main.astro";
 
                <!-- Pilotaje Card -->
               <div class="bg-ams-light p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center">
-                   <div class="w-16 h-16 bg-ams-gray/20 rounded-full flex items-center justify-center text-3xl mb-4">👨‍✈️</div>
+                   <div class="w-16 h-16 bg-ams-gray/20 rounded-full flex items-center justify-center text-3xl mb-4 text-ams-highlight">
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        </svg>
+                   </div>
                    <h3 class="font-bold text-ams-dark text-xl mb-4">PILOTAJE (OPCIONAL)</h3>
                    <p class="text-ams-highlight font-bold text-2xl mb-2">USD 50–100<span class="text-sm font-normal text-gray-500">/hora</span></p>
                    <p class="text-sm text-gray-500">o fijo mensual USD 1.500</p>

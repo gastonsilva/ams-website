@@ -1,11 +1,21 @@
 ---
 import MainLayout from "#layouts/main.astro";
+import { Image } from "astro:assets";
+import aboutHeaderImg from "#assets/images/about-header.png";
+import albinoImg from "#assets/images/albino.png";
+import sergioImg from "#assets/images/sergio.png";
 ---
 
 <MainLayout>
   <!-- Page Header -->
-  <section class="bg-ams-dark py-12">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+  <section class="relative bg-ams-dark py-20 lg:py-32 overflow-hidden">
+     <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <Image src={aboutHeaderImg} alt="About Us Header" class="w-full h-full object-cover opacity-30" />
+        <div class="absolute inset-0 bg-gradient-to-b from-ams-dark/80 via-ams-dark/60 to-ams-dark/90"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
         Misión, Visión & Valores
       </h1>
@@ -51,42 +61,42 @@ import MainLayout from "#layouts/main.astro";
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         <div class="space-y-2">
-            <h3 class="text-xl font-bold text-white">1. Honestidad y transparencia.</h3>
+            <h3 class="text-xl font-bold text-white">Honestidad y transparencia.</h3>
             <p class="text-ams-gray text-sm leading-relaxed">
                 Actuamos con integridad absoluta en todos los procesos técnicos, operativos y administrativos. El dueño siempre conoce el estado real de su aeronave, sus costos y sus necesidades. No existen sorpresas.
             </p>
         </div>
 
         <div class="space-y-2">
-            <h3 class="text-xl font-bold text-white">2. Seguridad Operacional como prioridad.</h3>
+            <h3 class="text-xl font-bold text-white">Seguridad Operacional como prioridad.</h3>
             <p class="text-ams-gray text-sm leading-relaxed">
                 Cada decisión se toma bajo los principios del Safety Management System (SMS), priorizando la prevención, la gestión del riesgo y la profesionalidad en cada vuelo y cada proceso de mantenimiento.
             </p>
         </div>
 
         <div class="space-y-2">
-            <h3 class="text-xl font-bold text-white">3. Puntualidad y cumplimiento.</h3>
+            <h3 class="text-xl font-bold text-white">Puntualidad y cumplimiento.</h3>
             <p class="text-ams-gray text-sm leading-relaxed">
                 Los empresarios valoran el tiempo por encima de todo. Cada entrega, gestión, trámite y vuelo se ejecuta exactamente cuando debe hacerse.
             </p>
         </div>
 
         <div class="space-y-2">
-            <h3 class="text-xl font-bold text-white">4. Excelencia en el servicio.</h3>
+            <h3 class="text-xl font-bold text-white">Excelencia en el servicio.</h3>
             <p class="text-ams-gray text-sm leading-relaxed">
                 El estándar es simple: operar como las mejores empresas de aircraft management del mundo. Atención personalizada, seguimiento continuo y disponibilidad real para el cliente.
             </p>
         </div>
 
         <div class="space-y-2">
-            <h3 class="text-xl font-bold text-white">5. Eficiencia operativa.</h3>
+            <h3 class="text-xl font-bold text-white">Eficiencia operativa.</h3>
             <p class="text-ams-gray text-sm leading-relaxed">
                 Optimizamos costos, horas, mantenimiento y recursos. La aeronave funciona con el mayor rendimiento posible, sin comprometer seguridad ni calidad.
             </p>
         </div>
 
         <div class="space-y-2">
-            <h3 class="text-xl font-bold text-white">6. Profesionalismo y formación continua.</h3>
+            <h3 class="text-xl font-bold text-white">Profesionalismo y formación continua.</h3>
             <p class="text-ams-gray text-sm leading-relaxed">
                 Nos actualizamos en normativa, seguridad, técnicas de vuelo, gestión documental, mantenimiento, CRM y gestión empresarial.
             </p>
@@ -104,8 +114,8 @@ import MainLayout from "#layouts/main.astro";
           <div class="space-y-16">
               <!-- Person 1 -->
               <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
-                  <div class="w-48 h-48 bg-ams-gray rounded-lg shrink-0 flex items-center justify-center overflow-hidden">
-                       <span class="text-4xl">👨‍✈️</span>
+                  <div class="w-48 h-48 rounded-lg shrink-0 overflow-hidden shadow-lg border-2 border-ams-gray">
+                       <Image src={albinoImg} alt="Albino De Pascua" class="w-full h-full object-cover" />
                   </div>
                   <div>
                       <h3 class="text-2xl font-bold text-ams-dark">ALBINO DE PASCUA JUAN CARLOS SALVADOR</h3>
@@ -127,8 +137,8 @@ import MainLayout from "#layouts/main.astro";
 
                <!-- Person 2 -->
               <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
-                  <div class="w-48 h-48 bg-ams-gray rounded-lg shrink-0 flex items-center justify-center overflow-hidden">
-                       <span class="text-4xl">👨‍✈️</span>
+                  <div class="w-48 h-48 rounded-lg shrink-0 overflow-hidden shadow-lg border-2 border-ams-gray">
+                        <Image src={sergioImg} alt="Sergio G. Zunino Romano" class="w-full h-full object-cover" />
                   </div>
                   <div>
                       <h3 class="text-2xl font-bold text-ams-dark">SERGIO G. ZUNINO ROMANO</h3>

@@ -22,6 +22,6 @@
     "#layouts/*": "./src/layouts/*",
     "#pages/*": "./src/pages/*",
     "#styles/*": "./src/styles/*.css",
-    "#assets/images": "./src/assets/images/index.ts"
+    "#assets/images/*": "./src/assets/images/*"
   }
 }
