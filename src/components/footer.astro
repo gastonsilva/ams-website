@@ -1,7 +1,52 @@
-<section class="py-8">
-  <div
-    class="bg-ams-dark text-ams-light max-w-7xl mx-auto px-2 sm:px-6 lg:px-8"
-  >
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-ams-dark text-ams-light font-sans border-t border-ams-highlight/20">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Logo/Brand -->
+      <div>
+        <h3 class="text-2xl font-bold text-ams-light mb-4">AMS</h3>
+        <p class="text-ams-gray text-sm leading-relaxed max-w-xs">
+          Aeronautical Management Services.<br/>
+          Aircraft Acquisition, Operation & Compliance.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold text-ams-highlight mb-4">Menu</h4>
+        <ul class="space-y-2 text-sm text-ams-gray">
+          <li><a href="/" class="hover:text-ams-highlight transition-colors">Home</a></li>
+          <li><a href="/about" class="hover:text-ams-highlight transition-colors">About Us</a></li>
+          <li><a href="/services" class="hover:text-ams-highlight transition-colors">Services</a></li>
+          <li><a href="/contact" class="hover:text-ams-highlight transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="text-lg font-semibold text-ams-highlight mb-4">Contact</h4>
+        <ul class="space-y-3 text-sm text-ams-gray">
+          <li class="flex items-start">
+            <span class="mr-2 text-ams-highlight">📍</span>
+            <span>Argentina</span>
+          </li>
+          <li class="flex items-center">
+             <span class="mr-2 text-ams-highlight">📞</span>
+             <a href="tel:+5491132724361" class="hover:text-ams-light transition-colors">+54 9 11 3272 4361</a>
+          </li>
+          <li class="flex items-center">
+            <span class="mr-2 text-ams-highlight">✉️</span>
+            <a href="mailto:Juanalbino009@gmail.com" class="hover:text-ams-light transition-colors">Juanalbino009@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 border-t border-ams-gray/10 pt-8 text-center text-xs text-ams-gray">
+      <p>&copy; {currentYear} Aeronautical Management Services. All rights reserved.</p>
+    </div>
   </div>
-</section>
-<section class='py-8"'></section>
+</footer>

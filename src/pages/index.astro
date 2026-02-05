@@ -1,12 +1,109 @@
 ---
-import Layout from "#layouts/main.astro";
-
-const imgLogo = "https://placehold.co/200x200";
+import MainLayout from "#layouts/main.astro";
+import Title from "#components/sections/title.astro"; // Assuming this exists or I'll check/create it
 ---
 
-<Layout>
-  <section
-    class="bg-ams-dark text-ams-light min-h-screen flex flex-col justify-center relative overflow-hidden pt-32 pb-20"
-  >
+<MainLayout>
+  <!-- Hero Section -->
+  <section class="relative bg-ams-dark py-20 lg:py-32 overflow-hidden">
+    <!-- Abstract Background Shape (Optional) -->
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-ams-highlight/10 blur-3xl"></div>
+    
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-ams-highlight font-medium tracking-wide text-sm sm:text-base uppercase mb-4">
+            By Albino De Pascua
+        </h2>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6">
+            AERONAUTICAL<br/>
+            <span class="text-ams-gray">MANAGEMENT</span><br/>
+            SERVICES
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl text-ams-gray max-w-2xl mx-auto font-light">
+            Aircraft Acquisition, Operation & Compliance.
+        </p>
+        
+        <div class="mt-12 flex justify-center items-center space-x-2">
+             <div class="h-px w-12 bg-ams-highlight"></div>
+             <p class="text-ams-highlight italic font-medium text-lg">
+                "Usted decide cuándo volar. Nosotros hacemos el resto."
+             </p>
+             <div class="h-px w-12 bg-ams-highlight"></div>
+        </div>
+
+        <div class="mt-10">
+            <a href="/contact" class="inline-block rounded-md bg-ams-highlight px-8 py-3 text-base font-medium text-ams-dark hover:bg-white transition-colors shadow-lg">
+                Contact Us
+            </a>
+        </div>
+    </div>
   </section>
-</Layout>
+
+  <!-- Introduction Section -->
+  <section class="py-16 bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+              <h2 class="text-3xl font-bold text-ams-dark">Nuestra empresa.</h2>
+              <div class="mt-2 h-1 w-20 bg-ams-highlight mx-auto"></div>
+          </div>
+          
+          <div class="max-w-3xl mx-auto text-center text-ams-dark/80 leading-relaxed">
+              <p class="mb-6 text-lg">
+                  <strong class="text-ams-dark">AERONAUTICAL MANAGEMENT SERVICES</strong> es una consultora especializada en la <strong class="text-ams-dark">gestión integral de aeronaves</strong> para <strong class="text-ams-dark">empresarios, compañías y propietarios privados.</strong>
+              </p>
+              <p>
+                  Acompañamos al cliente en <strong>cada etapa</strong>:
+              </p>
+              <ul class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-left max-w-lg mx-auto pl-4 list-disc marker:text-ams-highlight">
+                  <li>Evaluación</li>
+                  <li>Adquisición</li>
+                  <li>Operación</li>
+                  <li>Gestión técnica</li>
+                  <li>Cumplimiento regulatorio</li>
+                  <li>Pilotaje</li>
+                  <li>Auditoría</li>
+                  <li>Optimización del activo</li>
+              </ul>
+          </div>
+      </div>
+  </section>
+
+  <!-- Benefits Teaser -->
+  <section class="py-16 bg-ams-gray/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-ams-dark mb-6">¿Qué es Aircraft Management?</h2>
+                <p class="text-ams-dark/80 mb-6 leading-relaxed">
+                    El <strong>aircraft management</strong> es el modelo europeo de administración aeronáutica donde un solo responsable se ocupa del 100% de la operación del avión.
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-center text-ams-dark/80">
+                        <span class="text-ams-highlight mr-2">✓</span> Representación del propietario
+                    </li>
+                    <li class="flex items-center text-ams-dark/80">
+                        <span class="text-ams-highlight mr-2">✓</span> Gestión operativa diaria
+                    </li>
+                    <li class="flex items-center text-ams-dark/80">
+                        <span class="text-ams-highlight mr-2">✓</span> Gestión técnica y de mantenimiento
+                    </li>
+                     <li class="flex items-center text-ams-dark/80">
+                        <span class="text-ams-highlight mr-2">✓</span> Control económico y administrativo
+                    </li>
+                </ul>
+                <div class="mt-8">
+                    <a href="/services" class="text-ams-highlight font-bold hover:underline">
+                        Ver todos los servicios →
+                    </a>
+                </div>
+            </div>
+            <div class="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-xl bg-ams-dark flex items-center justify-center">
+                 <!-- Placeholder for an image -->
+                 <div class="text-center p-6">
+                     <span class="text-5xl block mb-2">✈️</span>
+                     <p class="text-ams-light text-lg font-light">Gestión Integral</p>
+                 </div>
+            </div>
+        </div>
+    </div>
+  </section>
+</MainLayout>

@@ -8,6 +8,7 @@ export default {
         "ams-light": "var(--color-ams-light)",
         "ams-highlight": "var(--color-ams-highlight)",
         "ams-gray": "var(--color-ams-gray)",
+        "ams-accent": "var(--color-ams-accent)",
       },
       fontFamily: {
         sans: "var(--font-sans)",
