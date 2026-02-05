@@ -14,7 +14,7 @@ export interface Props {
 const { items } = Astro.props;
 ---
 
-<nav class="relative bg-ams-dark">
+<nav id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent py-2">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
       <!-- Logo -->
@@ -94,7 +94,7 @@ const { items } = Astro.props;
   </div>
 
   <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="hidden sm:hidden" id="mobile-menu">
+  <div class="hidden sm:hidden bg-ams-dark/95 backdrop-blur-md" id="mobile-menu">
     <div class="space-y-1 px-2 pb-3 pt-2">
       {
         items.map((item) => {
@@ -128,6 +128,7 @@ const { items } = Astro.props;
 <script>
   const btn = document.getElementById("mobile-menu-button");
   const menu = document.getElementById("mobile-menu");
+  const nav = document.getElementById("main-nav");
 
   if (btn && menu) {
     btn.addEventListener("click", () => {
@@ -136,4 +137,20 @@ const { items } = Astro.props;
       menu.classList.toggle("hidden");
     });
   }
+
+  // Scroll effect
+  const handleScroll = () => {
+    if (nav) {
+      if (window.scrollY > 50) {
+        nav.classList.add("bg-ams-dark", "shadow-lg", "py-0");
+        nav.classList.remove("bg-transparent", "py-2");
+      } else {
+        nav.classList.add("bg-transparent", "py-2");
+        nav.classList.remove("bg-ams-dark", "shadow-lg", "py-0");
+      }
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // Initial check
 </script>
