@@ -8,3 +8,9 @@
   --color-ams-gray: #F3F4F6;
   --color-ams-accent: #0f2a5e;
 }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
