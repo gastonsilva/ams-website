@@ -1,0 +1,27 @@
+{
+  "name": "@ams/website",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "astro dev --open",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.15.3",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.1.16"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.16"
+  },
+  "imports": {
+    "#components/*": "./src/components/*",
+    "#layouts/*": "./src/layouts/*",
+    "#pages/*": "./src/pages/*",
+    "#styles/*": "./src/styles/*.css",
+    "#assets/images": "./src/assets/images/index.ts"
+  }
+}

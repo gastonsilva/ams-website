@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+@theme {
+  --font-sans: "Satoshi", "Raleway", ui-sans-serif, system-ui, sans-serif;
+  --color-ams-dark: #191a23;
+  --color-ams-light: #f3f3f3;
+  --color-ams-highlight: #df0884;
+  --color-ams-gray: #d9d9d9;
+}

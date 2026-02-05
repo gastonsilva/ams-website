@@ -1,0 +1,12 @@
+{
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[css,tailwindcss]": {
+    "editor.defaultFormatter": "bradlc.vscode-tailwindcss"
+  },
+  "files.associations": {
+    "*.astro": "astro",
+    "*.css": "tailwindcss"
+  }
+}

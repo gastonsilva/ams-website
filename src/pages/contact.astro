@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "#layouts/main.astro";
+import DarkTitleSection from "#components/sections/dark-title.astro";
+import { left, right } from "#assets/images/pages/contact";
+---
+
+<MainLayout>
+  <DarkTitleSection
+    title="Contacto"
+    subtitles={["+54 9 11 1234-5678", "info@ams.com"]}
+  />
+
+  <section class="bg-ams-light p-8">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row">
+        <div class="w-full md:w-1/2 p-2">
+          <Image src={left} alt="contact" class="w-full h-96 object-cover" />
+        </div>
+        <div class="w-full md:w-1/2 p-2">
+          <Image src={right} alt="contact" class="w-full h-96 object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

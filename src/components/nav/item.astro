@@ -1,0 +1,58 @@
+---
+export interface Props {
+  href: string;
+  layout: "desktop" | "mobile";
+}
+const { href, layout } = Astro.props;
+
+// Determine active state
+// If href is root '/', require exact match.
+// Otherwise, check if current path starts with href (for nested pages).
+const isActive =
+  href === "/"
+    ? Astro.url.pathname === href
+    : Astro.url.pathname.startsWith(href);
+
+const state = isActive ? "active" : "inactive";
+
+const variants = {
+  layout: {
+    desktop: ["text-sm"],
+    mobile: ["block", "text-base"],
+  },
+  state: {
+    active: [
+      "text-ams-light",
+      "underline",
+      "decoration-2",
+      "underline-offset-4",
+    ],
+    inactive: [
+      "text-ams-gray",
+      "hover:text-ams-light",
+      "hover:bg-ams-light/10",
+    ],
+  },
+  "aria-current": {
+    active: "page" as const,
+    inactive: undefined,
+  },
+};
+---
+
+<a
+  href={href}
+  aria-current={variants["aria-current"][state]}
+  class:list={[
+    "rounded-md",
+    "px-3",
+    "py-2",
+    "font-medium",
+    "font-sans",
+    "transition-colors",
+    ...variants.layout[layout],
+    ...variants.state[state],
+  ]}
+>
+  <slot />
+</a>
