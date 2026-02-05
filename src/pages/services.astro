@@ -6,10 +6,10 @@ import servicesHeaderImg from "#assets/images/services-header.png";
 
 <MainLayout>
   <!-- Page Header -->
-  <section class="relative bg-ams-dark py-20 lg:py-32 overflow-hidden">
+  <section class="relative bg-ams-dark py-32 lg:py-52 overflow-hidden">
      <!-- Background Image -->
     <div class="absolute inset-0 z-0">
-        <Image src={servicesHeaderImg} alt="Services Header" class="w-full h-full object-cover opacity-30" />
+        <Image src={servicesHeaderImg} alt="Services Header" class="w-full h-full object-cover object-center opacity-30 max-w-none" />
         <div class="absolute inset-0 bg-gradient-to-b from-ams-dark/80 via-ams-dark/60 to-ams-dark/90"></div>
     </div>
     <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
@@ -23,7 +23,7 @@ import servicesHeaderImg from "#assets/images/services-header.png";
   </section>
 
   <!-- Aircraft Management Definition -->
-  <section class="py-16 bg-white">
+  <section id="aircraft-management" class="py-16 bg-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="bg-ams-gray/10 rounded-2xl p-8 md:p-12 shadow-sm border border-ams-gray/20">
               <h2 class="text-3xl font-bold text-ams-dark mb-6">¿QUÉ ES AIRCRAFT MANAGEMENT?</h2>
@@ -50,7 +50,7 @@ import servicesHeaderImg from "#assets/images/services-header.png";
   </section>
 
   <!-- Diagnostic Report (Entry Program) -->
-  <section class="py-16 bg-ams-dark text-white">
+  <section id="diagnostic-report" class="py-16 bg-ams-dark text-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
            <div class="mb-12">
                <h2 class="text-3xl font-bold text-white mb-2">PROGRAMA DE ENTRADA</h2>
@@ -64,7 +64,7 @@ import servicesHeaderImg from "#assets/images/services-header.png";
            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                <!-- Col 1 -->
                <div class="bg-white/5 p-6 rounded-lg border border-white/10">
-                   <h4 class="text-lg font-bold text-ams-highlight mb-4">Análisis de Necesidades.</h4>
+                   <h4 class="text-lg font-bold text-ams-highlight mb-4">Análisis de Necesidades</h4>
                    <ul class="space-y-2 text-sm text-ams-gray list-disc pl-4">
                        <li>Alcance y tipo de misión</li>
                        <li>Frecuencia de uso</li>
@@ -76,7 +76,7 @@ import servicesHeaderImg from "#assets/images/services-header.png";
 
                <!-- Col 2 -->
                <div class="bg-white/5 p-6 rounded-lg border border-white/10">
-                   <h4 class="text-lg font-bold text-ams-highlight mb-4">Comparativa Técnica.</h4>
+                   <h4 class="text-lg font-bold text-ams-highlight mb-4">Comparativa Técnica</h4>
                    <p class="text-xs text-gray-400 mb-2">Evaluación objetiva: Monomotores, Bimotores, Turbohélices, Jets livianos.</p>
                    <ul class="space-y-2 text-sm text-ams-gray">
                        <li class="flex items-center"><span class="text-ams-highlight mr-2">✓</span> Performance</li>
@@ -89,7 +89,7 @@ import servicesHeaderImg from "#assets/images/services-header.png";
 
                <!-- Col 3 -->
                <div class="bg-white/5 p-6 rounded-lg border border-white/10">
-                   <h4 class="text-lg font-bold text-ams-highlight mb-4">Proyección Económica.</h4>
+                   <h4 class="text-lg font-bold text-ams-highlight mb-4">Proyección Económica</h4>
                    <ul class="space-y-2 text-sm text-ams-gray list-disc pl-4">
                        <li>Costos fijos y variables</li>
                        <li>Mantenimiento programado</li>
@@ -103,7 +103,7 @@ import servicesHeaderImg from "#assets/images/services-header.png";
   </section>
 
   <!-- Premium Program -->
-  <section class="py-16 bg-white">
+  <section id="premium-program" class="py-16 bg-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
            <div class="mb-12">
                <h2 class="text-3xl font-bold text-ams-dark mb-2">PROGRAMA PREMIUM</h2>
@@ -115,7 +115,7 @@ import servicesHeaderImg from "#assets/images/services-header.png";
 
            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                <div class="p-6 border-l-2 border-ams-highlight bg-ams-gray/5">
-                   <h4 class="font-bold text-ams-dark mb-3">Gestión Operativa.</h4>
+                   <h4 class="font-bold text-ams-dark mb-3">Gestión Operativa</h4>
                    <ul class="space-y-1 text-sm text-ams-dark/70">
                        <li>✓ Programación de vuelos</li>
                        <li>✓ Coordinación de tripulaciones</li>
@@ -126,7 +126,7 @@ import servicesHeaderImg from "#assets/images/services-header.png";
                </div>
 
                <div class="p-6 border-l-2 border-ams-highlight bg-ams-gray/5">
-                   <h4 class="font-bold text-ams-dark mb-3">Gestión Técnica.</h4>
+                   <h4 class="font-bold text-ams-dark mb-3">Gestión Técnica</h4>
                    <ul class="space-y-1 text-sm text-ams-dark/70">
                        <li>✓ Supervisión de mantenimiento</li>
                        <li>✓ Auditorías internas</li>
@@ -138,7 +138,7 @@ import servicesHeaderImg from "#assets/images/services-header.png";
                </div>
 
                <div class="p-6 border-l-2 border-ams-highlight bg-ams-gray/5">
-                   <h4 class="font-bold text-ams-dark mb-3">Gestión Regulatoria.</h4>
+                   <h4 class="font-bold text-ams-dark mb-3">Gestión Regulatoria</h4>
                    <ul class="space-y-1 text-sm text-ams-dark/70">
                        <li>✓ Representación ANAC / EANA</li>
                        <li>✓ RNA y trámites</li>
@@ -148,7 +148,7 @@ import servicesHeaderImg from "#assets/images/services-header.png";
                </div>
 
                 <div class="p-6 border-l-2 border-ams-highlight bg-ams-gray/5">
-                   <h4 class="font-bold text-ams-dark mb-3">Gestión Económica.</h4>
+                   <h4 class="font-bold text-ams-dark mb-3">Gestión Económica</h4>
                    <ul class="space-y-1 text-sm text-ams-dark/70">
                        <li>✓ Presupuesto anual</li>
                        <li>✓ Control de gastos</li>
@@ -159,7 +159,7 @@ import servicesHeaderImg from "#assets/images/services-header.png";
                </div>
 
                 <div class="p-6 border-l-2 border-ams-highlight bg-ams-gray/5">
-                   <h4 class="font-bold text-ams-dark mb-3">Pilotaje (Opcional).</h4>
+                   <h4 class="font-bold text-ams-dark mb-3">Pilotaje (Opcional)</h4>
                    <ul class="space-y-1 text-sm text-ams-dark/70">
                        <li>✓ Pilotaje profesional</li>
                        <li>✓ Entrenamientos y checkouts</li>
@@ -172,7 +172,7 @@ import servicesHeaderImg from "#assets/images/services-header.png";
   </section>
 
   <!-- Benefits -->
-  <section class="py-16 bg-ams-gray/20">
+  <section id="benefits" class="py-16 bg-ams-gray/20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
            <h2 class="text-3xl font-bold text-ams-dark mb-12 text-center">BENEFICIOS PARA EL PROPIETARIO</h2>
            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto">
@@ -205,9 +205,9 @@ import servicesHeaderImg from "#assets/images/services-header.png";
   </section>
 
   <!-- Pricing / Tariffs -->
-  <section class="py-16 bg-white">
+  <section id="pricing" class="py-16 bg-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-bold text-ams-dark mb-12 text-center">Tarifas.</h2>
+          <h2 class="text-3xl font-bold text-ams-dark mb-12 text-center">Tarifas</h2>
           
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
               <!-- Service Card -->
