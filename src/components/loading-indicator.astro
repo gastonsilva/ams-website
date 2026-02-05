@@ -26,6 +26,7 @@
   }
 
   function hideLoading() {
+    window.scrollTo(0, 0);
     const indicator = document.getElementById('global-loading-indicator');
     const progressBar = document.getElementById('page-progress-bar');
     
@@ -65,6 +66,10 @@
   // 'astro:page-load' fires on initial load and after every swap
   document.addEventListener('astro:page-load', () => {
     hideLoading();
+  });
+
+  document.addEventListener('astro:after-swap', () => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
   });
 
   document.addEventListener('astro:before-preparation', () => {
